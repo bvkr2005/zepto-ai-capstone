@@ -1,0 +1,337 @@
+
+========================================
+QUERY 1 - BOOKS WITH RATING 5
+========================================
+
+SQL:
+
+        SELECT
+            book_id,
+            title,
+            price_gbp,
+            rating
+        FROM books
+        WHERE rating = 5;
+        
+
+OUTPUT:
+ book_id                                                                                                    title  price_gbp  rating
+       2                                                                              Private Paris (Private #10)      47.61       5
+       3                                                                             We Love You, Charlie Freeman      50.27       5
+       4                                                                                                   Thirst      17.27       5
+       8                                                                     The Regional Office Is Under Attack!      51.36       5
+       9                                                                 Finders Keepers (Bill Hodges Trilogy #2)      53.53       5
+      10                                                                                          The Time Keeper      27.88       5
+      22                                                                                       Dear Mr. Knightley      11.21       5
+      26                                                                  The Silent Sister (Riley MacPherson #1)      46.29       5
+      45                                                                                               Siddhartha      34.22       5
+      47                                                                                         Digital Fortress      58.00       5
+      48                                                                                           Atlas Shrugged      26.58       5
+      52                                                                                     The Husband's Secret      52.51       5
+      57                                                                              Inferno (Robert Langdon #4)      41.00       5
+      58                                                                 Crazy Rich Asians (Crazy Rich Asians #1)      49.13       5
+      62                                                                                          The Silent Wife      12.34       5
+      64                                                                            Kitchens of the Great Midwest      57.20       5
+      65                                                                                             Bright Lines      39.07       5
+      68                                                         Princess Between Worlds (Wide-Awake Princess #5)      13.34       5
+      76                                                                                   The Star-Touched Queen      46.02       5
+      80 Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)      37.51       5
+      83                                                                                   The Star-Touched Queen      32.30       5
+      85                                                                 King's Folly (The Kinsman Chronicles #1)      39.61       5
+      86                                                         Every Heart a Doorway (Every Heart A Doorway #1)      12.16       5
+      89                                                             The False Prince (The Ascendance Trilogy #1)      56.00       5
+      93                                                                 The Beast (Black Dagger Brotherhood #14)      46.08       5
+      94                                                                    Paper and Fire (The Great Library #2)      49.45       5
+      96                                                 Harry Potter and the Half-Blood Prince (Harry Potter #6)      48.75       5
+     114                                                                               Chase Me (Paris Nights #2)      25.27       5
+     115                                                                                               Black Dust      34.53       5
+     128                                                         A Gentleman's Position (Society of Gentlemen #3)      14.75       5
+     146                                                                          Deep Under (Walker Security #1)      47.09       5
+
+
+========================================
+QUERY 2 - 10 MOST EXPENSIVE BOOKS
+========================================
+
+SQL:
+
+        SELECT
+            book_id,
+            title,
+            price_gbp,
+            price_inr,
+            rating
+        FROM books
+        ORDER BY price_gbp DESC
+        LIMIT 10;
+        
+
+OUTPUT:
+ book_id                                             title  price_gbp  price_inr  rating
+     131                The Perfect Play (Play by Play #1)      59.99    6328.95       3
+      46                 Last One Home (New Beginnings #1)      59.98    6327.89       3
+      28                         The Improbability of Love      59.45    6271.98       1
+     143                          Listen to Me (Fusion #1)      58.99    6223.45       3
+     113                               Myriad (Prentor #1)      58.75    6198.12       4
+      98 The Rose & the Dagger (The Wrath and the Dawn #2)      58.64    6186.52       4
+      35                                   Miller's Valley      58.54    6175.97       2
+      47                                  Digital Fortress      58.00    6119.00       5
+      88               The Raven Boys (The Raven Cycle #1)      57.74    6091.57       4
+      64                     Kitchens of the Great Midwest      57.20    6034.60       5
+
+
+========================================
+QUERY 3 - DISTINCT CATEGORIES
+========================================
+
+SQL:
+
+        SELECT DISTINCT
+            category_name
+        FROM categories
+        ORDER BY category_name;
+        
+
+OUTPUT:
+category_name
+      Fantasy
+      Fiction
+      Romance
+
+
+========================================
+QUERY 4 - BOOKS PRICED BETWEEN GBP 20 AND GBP 30
+========================================
+
+SQL:
+
+        SELECT
+            book_id,
+            title,
+            price_gbp,
+            rating
+        FROM books
+        WHERE price_gbp BETWEEN 20 AND 30
+        ORDER BY price_gbp ASC;
+        
+
+OUTPUT:
+ book_id                                                                      title  price_gbp  rating
+     129                                                            Sit, Stay, Love      20.90       3
+       6                                                     Tuesday Nights in 1980      21.04       2
+     110                                         Shadow Rites (Jane Yellowrock #10)      21.72       4
+      36                                                          Hystopia: A Novel      21.96       4
+     118                                      Fifty Shades Darker (Fifty Shades #2)      21.96       1
+     104                                                                        Ash      22.06       4
+      54                                                        The Art of Fielding      22.10       1
+      59                                                            Big Little Lies      22.11       1
+      53                                      The Da Vinci Code (Robert Langdon #2)      22.96       2
+      49                                                        Three-Martini Lunch      23.21       3
+     119                                                          The Wedding Dress      24.12       1
+      17                                                              My Mrs. Brown      24.48       3
+      99                                                         Soldier (Talon #3)      24.72       2
+      42                                                  The Little Paris Bookshop      24.73       3
+      23                                Cometh the Hour (The Clifton Chronicles #6)      25.01       3
+      67                              Saga, Volume 6 (Saga (Collected Editions) #6)      25.02       3
+     114                                                 Chase Me (Paris Nights #2)      25.27       5
+      12                                        The First Hostage (J.B. Collins #2)      25.85       3
+      50                                                            The Nightingale      26.26       4
+      14                                               Still Life with Bread Crumbs      26.41       3
+      48                                                             Atlas Shrugged      26.58       5
+      20                                           Eligible (The Austen Project #4)      27.09       3
+      51                                                             The Infinities      27.41       1
+     138                                          Best of My Love (Fool's Gold #20)      27.41       2
+      10                                                            The Time Keeper      27.88       5
+      33                                                                  The Shack      28.03       1
+      71 Avatar: The Last Airbender: Smoke and Shadow, Part 3 (Smoke and Shadow #3)      28.09       2
+     141                                                   Rhythm, Chord & Malykhin      28.34       2
+     124                                    Hold Your Breath (Search and Rescue #1)      28.82       1
+      18                                      Mr. Mercedes (Bill Hodges Trilogy #1)      28.90       1
+     111                                                       Origins (Alphas 0.5)      28.99       1
+     108                        The Mirror & the Maze (The Wrath and the Dawn #1.5)      29.38       1
+      79                                           Island of Dragons (Unwanteds #7)      29.65       1
+
+
+========================================
+QUERY 5 - BOOKS WITH CATEGORY JOIN
+========================================
+
+SQL:
+
+        SELECT
+            b.book_id,
+            b.title,
+            b.price_gbp,
+            b.price_inr,
+            b.rating,
+            b.in_stock,
+            c.category_name
+        FROM books AS b
+        INNER JOIN categories AS c
+            ON b.category_id = c.category_id
+        ORDER BY b.rating DESC,
+                 b.price_gbp DESC
+        LIMIT 20;
+        
+
+OUTPUT:
+ book_id                                                                                                    title  price_gbp  price_inr  rating  in_stock category_name
+      47                                                                                         Digital Fortress      58.00    6119.00       5         1       Fiction
+      64                                                                            Kitchens of the Great Midwest      57.20    6034.60       5         1       Fiction
+      89                                                             The False Prince (The Ascendance Trilogy #1)      56.00    5908.00       5         1       Fantasy
+       9                                                                 Finders Keepers (Bill Hodges Trilogy #2)      53.53    5647.42       5         1       Fiction
+      52                                                                                     The Husband's Secret      52.51    5539.80       5         1       Fiction
+       8                                                                     The Regional Office Is Under Attack!      51.36    5418.48       5         1       Fiction
+       3                                                                             We Love You, Charlie Freeman      50.27    5303.48       5         1       Fiction
+      94                                                                    Paper and Fire (The Great Library #2)      49.45    5216.98       5         1       Fantasy
+      58                                                                 Crazy Rich Asians (Crazy Rich Asians #1)      49.13    5183.22       5         1       Fiction
+      96                                                 Harry Potter and the Half-Blood Prince (Harry Potter #6)      48.75    5143.12       5         1       Fantasy
+       2                                                                              Private Paris (Private #10)      47.61    5022.85       5         1       Fiction
+     146                                                                          Deep Under (Walker Security #1)      47.09    4968.00       5         1       Romance
+      26                                                                  The Silent Sister (Riley MacPherson #1)      46.29    4883.60       5         1       Fiction
+      93                                                                 The Beast (Black Dagger Brotherhood #14)      46.08    4861.44       5         1       Fantasy
+      76                                                                                   The Star-Touched Queen      46.02    4855.11       5         1       Fantasy
+      57                                                                              Inferno (Robert Langdon #4)      41.00    4325.50       5         1       Fiction
+      85                                                                 King's Folly (The Kinsman Chronicles #1)      39.61    4178.85       5         1       Fantasy
+      65                                                                                             Bright Lines      39.07    4121.88       5         1       Fiction
+      80 Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)      37.51    3957.30       5         1       Fantasy
+     115                                                                                               Black Dust      34.53    3642.92       5         1       Romance
+
+
+========================================
+QUERY 6 - FICTION AND FANTASY BOOKS
+========================================
+
+SQL:
+
+        SELECT
+            b.title,
+            b.price_gbp,
+            b.rating,
+            c.category_name
+        FROM books AS b
+        INNER JOIN categories AS c
+            ON b.category_id = c.category_id
+        WHERE c.category_name
+            IN ('Fiction', 'Fantasy')
+        ORDER BY
+            c.category_name,
+            b.title;
+        
+
+OUTPUT:
+                                                                                                   title  price_gbp  rating category_name
+                                            A Court of Thorns and Roses (A Court of Thorns and Roses #1)      52.37       1       Fantasy
+                                                           A Feast for Crows (A Song of Ice and Fire #4)      17.21       4       Fantasy
+                                                             A Gathering of Shadows (Shades of Magic #2)      44.81       4       Fantasy
+                                                             A Shard of Ice (The Black Symphony Saga #1)      56.63       3       Fantasy
+                                                           A Storm of Swords (A Song of Ice and Fire #3)      31.22       2       Fantasy
+                                                                                                     Ash      22.06       4       Fantasy
+                              Avatar: The Last Airbender: Smoke and Shadow, Part 3 (Smoke and Shadow #3)      28.09       2       Fantasy
+                                                               City of Glass (The Mortal Instruments #3)      56.02       4       Fantasy
+                                                                  Crown of Midnight (Throne of Glass #2)      43.29       3       Fantasy
+                                                                                    Darkfever (Fever #1)      56.02       1       Fantasy
+Demigods & Magicians: Percy and Annabeth Meet the Kanes (Percy Jackson & Kane Chronicles Crossover #1-3)      37.51       5       Fantasy
+                                                                       Eragon (The Inheritance Cycle #1)      43.87       3       Fantasy
+                                                        Every Heart a Doorway (Every Heart A Doorway #1)      12.16       5       Fantasy
+                                               Harry Potter and the Chamber of Secrets (Harry Potter #2)      14.74       1       Fantasy
+                                                Harry Potter and the Half-Blood Prince (Harry Potter #6)      48.75       5       Fantasy
+                                             Harry Potter and the Order of the Phoenix (Harry Potter #5)      31.63       4       Fantasy
+                                                                                         Heir to the Sky      44.07       4       Fantasy
+                                                     Hollow City (Miss Peregrine’s Peculiar Children #2)      42.98       1       Fantasy
+                                                                        Island of Dragons (Unwanteds #7)      29.65       1       Fantasy
+                                                                King's Folly (The Kinsman Chronicles #1)      39.61       5       Fantasy
+                                                                                       Masks and Shadows      56.40       2       Fantasy
+                                                Midnight Riot (Peter Grant/ Rivers of London - books #1)      55.46       2       Fantasy
+                                                                                     Myriad (Prentor #1)      58.75       4       Fantasy
+                                                                                   One Second (Seven #7)      52.94       2       Fantasy
+                                                                                    Origins (Alphas 0.5)      28.99       1       Fantasy
+                                                                   Paper and Fire (The Great Library #2)      49.45       5       Fantasy
+                                                        Princess Between Worlds (Wide-Awake Princess #5)      13.34       5       Fantasy
+                                                           Saga, Volume 6 (Saga (Collected Editions) #6)      25.02       3       Fantasy
+                                                                        Searching for Meaning in Gailana      38.73       1       Fantasy
+                                                                      Shadow Rites (Jane Yellowrock #10)      21.72       4       Fantasy
+                                                                         Sister Sable (The Mad Queen #1)      13.33       3       Fantasy
+                                                                                      Soldier (Talon #3)      24.72       2       Fantasy
+                                                                                  Tell the Wind and Fire      45.51       3       Fantasy
+                                                         The Bane Chronicles (The Bane Chronicles #1-11)      44.73       4       Fantasy
+                                                                The Beast (Black Dagger Brotherhood #14)      46.08       5       Fantasy
+                                                                             The Demonists (Demonist #1)      52.11       2       Fantasy
+                                                            The False Prince (The Ascendance Trilogy #1)      56.00       5       Fantasy
+                                                          The Glittering Court (The Glittering Court #1)      44.28       1       Fantasy
+                                                             The Hidden Oracle (The Trials of Apollo #1)      52.26       2       Fantasy
+                                                     The Mirror & the Maze (The Wrath and the Dawn #1.5)      29.38       1       Fantasy
+                                                                     The Raven Boys (The Raven Cycle #1)      57.74       4       Fantasy
+                                                       The Rose & the Dagger (The Wrath and the Dawn #2)      58.64       4       Fantasy
+                                                          The Silent Twin (Detective Jennifer Knight #3)      36.25       3       Fantasy
+                                                                                  The Star-Touched Queen      46.02       5       Fantasy
+                                                                                  The Star-Touched Queen      32.30       5       Fantasy
+                                                                    Throne of Glass (Throne of Glass #1)      35.07       3       Fantasy
+                                                                                          Unicorn Tracks      18.78       3       Fantasy
+                                                                          Vampire Girl (Vampire Girl #1)      53.82       2       Fantasy
+                                                                                                11/22/63      48.48       3       Fiction
+                                                                                        A Man Called Ove      39.72       1       Fiction
+                                                                                          Atlas Shrugged      26.58       5       Fiction
+                                                                                         Balloon Animals      17.03       3       Fiction
+                                                                                         Big Little Lies      22.11       1       Fiction
+                                                                                            Bright Lines      39.07       5       Fiction
+                                                             Cometh the Hour (The Clifton Chronicles #6)      25.01       3       Fiction
+                                                                Crazy Rich Asians (Crazy Rich Asians #1)      49.13       5       Fiction
+                                                                                              Daredevils      16.34       3       Fiction
+                                                                                      Dear Mr. Knightley      11.21       5       Fiction
+                                                                                         Deception Point      40.32       4       Fiction
+                                                                                        Digital Fortress      58.00       5       Fiction
+                                                                                    Eight Hundred Grapes      14.39       4       Fiction
+                                                                        Eligible (The Austen Project #4)      27.09       3       Fiction
+                                                                Finders Keepers (Bill Hodges Trilogy #2)      53.53       5       Fiction
+                                                                                       Hystopia: A Novel      21.96       4       Fiction
+                                                                               I Am Pilgrim (Pilgrim #1)      10.60       4       Fiction
+                                                                             Inferno (Robert Langdon #4)      41.00       5       Fiction
+                                                                        Jurassic Park (Jurassic Park #1)      44.97       1       Fiction
+                                                                           Kitchens of the Great Midwest      57.20       5       Fiction
+                                                                       Last One Home (New Beginnings #1)      59.98       3       Fiction
+                                                                             Lies and Other Acts of Love      45.14       1       Fiction
+                                                                                        Lila (Gilead #3)      12.47       3       Fiction
+                                                                        Me Before You (Me Before You #1)      19.02       1       Fiction
+                                                                                     Memoirs of a Geisha      49.67       3       Fiction
+                                                                                         Miller's Valley      58.54       2       Fiction
+                                                                                        Mothering Sunday      13.34       2       Fiction
+                                                                   Mr. Mercedes (Bill Hodges Trilogy #1)      28.90       1       Fiction
+                                                                                           My Mrs. Brown      24.48       3       Fiction
+                                                                                  My Name Is Lucy Barton      41.56       1       Fiction
+                                                                             Private Paris (Private #10)      47.61       5       Fiction
+                                                                                                   Shtum      55.84       4       Fiction
+                                                                                              Siddhartha      34.22       5       Fiction
+                                                                                             Sister Dear      40.20       4       Fiction
+                                                                                              Soumission      50.10       1       Fiction
+                                                                            Still Life with Bread Crumbs      26.41       3       Fiction
+                                                                                        Take Me with You      45.21       3       Fiction
+                                                                                     The Art of Fielding      22.10       1       Fiction
+                                                                                    The Bette Davis Club      30.66       3       Fiction
+                                                                   The Bourne Identity (Jason Bourne #1)      42.78       4       Fiction
+                                                                                      The Course of Love      16.78       3       Fiction
+                                                                   The Da Vinci Code (Robert Langdon #2)      22.96       2       Fiction
+                                                                                        The Dinner Party      56.54       2       Fiction
+                                                                                         The Expatriates      44.58       2       Fiction
+                                                                                                The Firm      45.56       3       Fiction
+                                                                     The First Hostage (J.B. Collins #2)      25.85       3       Fiction
+                                                                          The High Mountains of Portugal      51.15       1       Fiction
+                                                                                    The Husband's Secret      52.51       5       Fiction
+                                                                               The Improbability of Love      59.45       1       Fiction
+                                                                                          The Infinities      27.41       1       Fiction
+                                                                               The Little Paris Bookshop      24.73       3       Fiction
+                                                       The Murder That Never Was (Forensic Instincts #5)      54.11       3       Fiction
+                                                                                         The Nightingale      26.26       4       Fiction
+                                                                    The Regional Office Is Under Attack!      51.36       5       Fiction
+                                                                                               The Shack      28.03       1       Fiction
+                                                                 The Silent Sister (Riley MacPherson #1)      46.29       5       Fiction
+                                                                                         The Silent Wife      12.34       5       Fiction
+                                                                                   The Testament of Mary      52.67       4       Fiction
+                                                                                         The Time Keeper      27.88       5       Fiction
+                                                                                         The Vacationers      42.15       4       Fiction
+                                                                                                  Thirst      17.27       5       Fiction
+                                                                                     Three-Martini Lunch      23.21       3       Fiction
+                                                                                  Tuesday Nights in 1980      21.04       2       Fiction
+                                                                            We Love You, Charlie Freeman      50.27       5       Fiction
+                                                                                           When I'm Gone      51.96       3       Fiction
+
