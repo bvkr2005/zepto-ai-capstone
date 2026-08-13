@@ -1,0 +1,1 @@
+The Titanic target contains 61.62% non-survivors and 38.38% survivors. SMOTE produced the highest F1 score of 0.7606, with precision 0.7397 and recall 0.7826. SMOTE was applied only to training data.

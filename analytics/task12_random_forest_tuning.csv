@@ -1,0 +1,2 @@
+n_estimators,max_depth,max_features,best_cv_f1,oob_score,test_accuracy,test_precision,test_recall,test_f1,test_auc
+100,5,sqrt,0.7459285142059674,0.827247191011236,0.8156424581005587,0.875,0.6086956521739131,0.717948717948718,0.8431488801054018

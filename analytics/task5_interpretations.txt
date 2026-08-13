@@ -1,0 +1,16 @@
+
+Chart 1: Survival Rate by Sex
+------------------------------------------------------------
+Female passengers had a survival rate of 74.04%, compared with 18.89% for male passengers. The large difference indicates that sex was strongly associated with survival. Female passengers were substantially more likely to survive.
+
+Chart 2: Survival Rate by Passenger Class
+------------------------------------------------------------
+First-class passengers had a survival rate of 62.62%, compared with 47.28% in second class and 24.24% in third class. Survival declined as passenger class moved from first to third. This suggests socioeconomic position was associated with survival opportunities.
+
+Chart 3: Survival Rate by Sex and Passenger Class
+------------------------------------------------------------
+Survival depended on both sex and passenger class. First-class females had a survival rate of 96.74%, while third-class females had 50.00%; first-class males had 36.89% compared with 13.54% for third-class males. The pattern suggests that being female provided a major survival advantage, while higher passenger class added another advantage.
+
+Chart 4: Age and Fare by Survival Status
+------------------------------------------------------------
+The age-versus-fare scatter plot shows that survival was not determined by age alone, because both survivors and non-survivors appear across a wide range of ages. Survivors had a median fare of 26.00, compared with 10.50 for non-survivors. This supports the passenger-class analysis by showing that passengers paying higher fares were more strongly represented among survivors.

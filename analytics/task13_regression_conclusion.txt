@@ -1,0 +1,1 @@
+The fare regression produced MAE 20.8094, RMSE 30.4731, R² 0.3999, and Adjusted R² 0.3679. The residual plot shows evidence of heteroscedasticity because residual spread changes across predicted fare values.

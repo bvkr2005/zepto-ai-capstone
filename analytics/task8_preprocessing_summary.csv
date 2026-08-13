@@ -1,0 +1,8 @@
+feature,type,missing_strategy,processing
+pclass,numeric,median,StandardScaler
+age,numeric,median,StandardScaler
+sibsp,numeric,median,StandardScaler
+parch,numeric,median,StandardScaler
+fare,numeric,median,StandardScaler
+sex,categorical,most_frequent,OneHotEncoder
+embarked,categorical,most_frequent,OneHotEncoder
