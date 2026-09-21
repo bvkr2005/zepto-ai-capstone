@@ -1,0 +1,8 @@
+# Dependencies for the support assistant only (used by the Dockerfile).
+# Pinned to the versions the project was developed and tested with.
+fastapi==0.141.1
+uvicorn==0.52.1
+pydantic==2.13.4
+chromadb==1.5.9
+sentence-transformers==5.7.0
+langgraph==1.2.11
